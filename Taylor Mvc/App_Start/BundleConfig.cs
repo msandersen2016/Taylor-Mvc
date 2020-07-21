@@ -23,7 +23,7 @@ namespace Taylor_Mvc
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrapsuper.css",
                       "~/Content/site.css"));
         }
     }
