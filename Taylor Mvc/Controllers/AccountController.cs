@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -81,7 +82,17 @@ namespace Taylor_Mvc.Controllers
                 case SignInStatus.Success:
                     //return RedirectToLocal(returnUrl);
 
-                    return RedirectToLocal("/Home");
+                    //return RedirectToLocal("/Home");
+
+                    //return RedirectToAction("About", "Home");
+                    var userId = SignInManager.AuthenticationManager.AuthenticationResponseGrant.Identity.GetUserId();
+
+                    if (UserManager.IsInRole(userId, "Admin"))
+                    {
+                        return RedirectToAction("Index", "Admin");
+                    }
+                    else
+                        return RedirectToAction("Index", "Home");
 
                 case SignInStatus.LockedOut:
                     return View("Lockout");

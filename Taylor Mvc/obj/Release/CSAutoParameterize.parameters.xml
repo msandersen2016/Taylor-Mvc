@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=&quot;|DataDirectory|\aspnet-Taylor Mvc-20200720010834.mdf&quot;;Initial Catalog=&quot;aspnet-Taylor Mvc-20200720010834&quot;;Integrated Security=True" tags="SqlConnectionString">
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=tcp:taylorsql2.database.windows.net,1433;Initial Catalog=ProServices2;User Id=Group1@taylorsql2;Password=Pr0gre$$11" tags="SqlConnectionString">
     <parameterEntry kind="XmlFile" scope="C:\\Users\\kmiller\\Source\\Repos\\msandersen2016\\Taylor-Mvc\\Taylor\ Mvc\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
 </parameters>
