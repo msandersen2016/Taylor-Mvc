@@ -190,6 +190,8 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrapsuper.css" />
+    <Content Include="Content\images\40001859-happy-smiling-business-team-in-office.jpg" />
+    <Content Include="Content\images\think-professional.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
