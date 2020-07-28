@@ -80,20 +80,7 @@ namespace Taylor_Mvc.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    //return RedirectToLocal(returnUrl);
-
-                    //return RedirectToLocal("/Home");
-
-                    //return RedirectToAction("About", "Home");
-                    var userId = SignInManager.AuthenticationManager.AuthenticationResponseGrant.Identity.GetUserId();
-
-                    if (UserManager.IsInRole(userId, "Admin"))
-                    {
-                        return RedirectToAction("Index", "Admin");
-                    }
-                    else
-                        return RedirectToAction("Index", "Home");
-
+                    return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

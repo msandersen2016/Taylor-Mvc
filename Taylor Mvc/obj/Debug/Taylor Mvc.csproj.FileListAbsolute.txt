@@ -322,3 +322,10 @@ C:\Users\matta\source\repos\Taylor Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csproj.Co
 C:\Users\matta\source\repos\Taylor Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csproj.CopyComplete
 C:\Users\matta\source\repos\Taylor Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.dll
 C:\Users\matta\source\repos\Taylor Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.pdb
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Web.Helpers.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.Providers.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\WebMatrix.Data.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\WebMatrix.WebData.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.Providers.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\WebMatrix.Data.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\WebMatrix.WebData.xml
