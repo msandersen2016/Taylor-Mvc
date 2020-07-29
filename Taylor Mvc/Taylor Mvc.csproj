@@ -363,6 +363,7 @@
     <Content Include="Views\Shared\_NavPartial.cshtml" />
     <Content Include="Views\Contracts\StaffingRequests.cshtml" />
     <Content Include="Views\Contracts\Contracts.cshtml" />
+    <Content Include="Views\Staff\Staffing.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
