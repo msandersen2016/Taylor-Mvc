@@ -6,30 +6,23 @@ using System.Web;
 
 namespace Taylor_Mvc.Models
 {
-    public class StaffModel
+    public class StaffModel : UserModel
     {
-        [Display(Name = "Email Address")]
-        [DataType(DataType.EmailAddress)]
-        [Required(ErrorMessage = "Please provide an email address")]
-        public string EmailAddress { get; set; }
+        [Display(Name = "First Name")]
+        [Required(ErrorMessage = "Please provide your first name")]
+        public string FirstName { get; set; }
 
-        [Display(Name = "Phone Number")]
-        [DataType(DataType.PhoneNumber)]
-        [Required]
-        public string PhoneNumber { get; set; }
+        [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Please provide your last name")]
+        public string LastName { get; set; }
 
-        [Required]
-        [Display(Name = "Job Title")]
-        public string JobTitle { get; set; }
-
-        [Required]
-        [Display(Name = "Expected Start Date")]
-        public DateTime StartDate { get; set; }
-
-        [Required]
+        [Required(ErrorMessage = "Please provide your skills")]
         public string Skills { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Please provide your experience")]
         public string Experience { get; set; }
+
+        public Guid Id { get; set; }
+
     }
 }
