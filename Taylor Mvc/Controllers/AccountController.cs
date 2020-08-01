@@ -21,18 +21,21 @@ namespace Taylor_Mvc.Controllers
         {
             if (UserProcessor.isValidCredentials(emailAddress, password))
             {
-                Session[emailAddress] = emailAddress;
+                Session["emailAddress"] = emailAddress;
                 if (UserProcessor.isInRole(emailAddress, "Staff"))
                 {
                     //TODO:redirect to staff page
+                    RedirectToAction("Index", "Home");
                 }
                 else if (UserProcessor.isInRole(emailAddress, "Client"))
                 {
                     //TODO:redirect to client page
+                    RedirectToAction("Index", "Home");
                 }
                 else if (UserProcessor.isInRole(emailAddress, "Admin"))
                 {
                     //TODO:redirect to admin page
+                    RedirectToAction("Index", "Home");
                 }
             }
             return View();

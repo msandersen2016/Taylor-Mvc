@@ -11,13 +11,6 @@ namespace Taylor_Mvc.BusinessLogic
     {
         public static bool isValidCredentials(string emailAddress, string password)
         {
-            //TODO: Implement database logic
-            UserModel data = new UserModel
-            {
-                EmailAddress = emailAddress,
-                Password = password
-            };
-
             string sql = String.Format("Exec spGetUserByEmailPassword '{0}','{1}'", emailAddress, password);
 
             List<UserModel> users = new List<UserModel>();
@@ -32,8 +25,16 @@ namespace Taylor_Mvc.BusinessLogic
 
         public static bool isInRole(string emailAddress, string role)
         {
-            //TODO: logic to check for role
-            return false;
+            string sql = String.Format("Exec spCheckUserRole '{0}','{1}'", emailAddress, role);
+
+            List<UserModel> users = new List<UserModel>();
+            users = SQLDataAccess.LoadData<UserModel>(sql);
+
+            if (users.Count == 1)
+            {
+                return true;
+            }
+            else return false;
         }
 
     }
