@@ -17,7 +17,7 @@ namespace Taylor_Mvc.Controllers
         // GET: Admin
         public ActionResult UserManagement()
         {
-            if (UserProcessor.isInRole(Session["emailAddress"]?.ToString(), "Admin"))
+            if (UserProcessor.IsInRole(Session["emailAddress"]?.ToString(), "Admin"))
             {
                 return View();
             }

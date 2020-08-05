@@ -1,5 +1,5 @@
 ﻿@using Taylor_Mvc.BusinessLogic;
-@if (UserProcessor.isInRole(Session["EmailAddress"]?.ToString(), "Admin"))
+@if (UserProcessor.IsInRole(Session["EmailAddress"]?.ToString(), "Admin"))
 {
     <li class="nav-item bg-dark"><a href="/Admin/UserManagement" class="nav-link">User Management</a></li>
 }

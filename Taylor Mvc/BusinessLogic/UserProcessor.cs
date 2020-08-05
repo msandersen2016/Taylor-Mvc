@@ -23,7 +23,7 @@ namespace Taylor_Mvc.BusinessLogic
             else return false;
         }
 
-        public static bool isInRole(string emailAddress, string role)
+        public static bool IsInRole(string emailAddress, string role)
         {
             string sql = String.Format("Exec spCheckUserRole '{0}','{1}'", emailAddress, role);
 

@@ -49,7 +49,7 @@ namespace Taylor_Mvc.Models
 
         public bool isInRole(string Role)
         {
-            return UserProcessor.isInRole(EmailAddress, Role);
+            return UserProcessor.IsInRole(EmailAddress, Role);
         }
     }
 }
