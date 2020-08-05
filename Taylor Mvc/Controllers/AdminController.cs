@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Taylor_Mvc.BusinessLogic;
 
 namespace Taylor_Mvc.Controllers
 {
@@ -16,7 +17,11 @@ namespace Taylor_Mvc.Controllers
         // GET: Admin
         public ActionResult UserManagement()
         {
-            return View();
+            if (UserProcessor.isInRole(Session["emailAddress"]?.ToString(), "Admin"))
+            {
+                return View();
+            }
+            else return RedirectToAction("Index", "Home");
         }
         // GET: Admin
         public ActionResult Register()

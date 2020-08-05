@@ -31,7 +31,7 @@ namespace Taylor_Mvc.Controllers
 
         public ActionResult RegisterStaff()
         {
-            ViewBag.Message = "Registration Page";
+            ViewBag.Message = "Staff Registration Page";
 
             return View();
         }
@@ -44,6 +44,27 @@ namespace Taylor_Mvc.Controllers
                 int recordsCreated = StaffProcessor.CreateStaff(model.EmailAddress,
                     model.Password, model.FirstName, model.LastName, model.Skills,
                     model.Experience, model.PhoneNumber);
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+
+        public ActionResult RegisterClient()
+        {
+            ViewBag.Message = "Client Registration Page";
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RegisterClient(ClientModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                int recordsCreated = ClientProcessor.CreateClient(model.EmailAddress,
+                    model.Password, model.FirstName, model.LastName, model.CompanyName,
+                    model.PhoneNumber);
                 return RedirectToAction("Index");
             }
 

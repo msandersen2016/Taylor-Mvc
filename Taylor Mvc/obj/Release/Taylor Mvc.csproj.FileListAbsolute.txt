@@ -53,22 +53,8 @@ C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\roslyn\VB
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Antlr3.Runtime.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\EntityFramework.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\EntityFramework.SqlServer.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.Core.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.Owin.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Host.SystemWeb.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Cookies.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Facebook.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Google.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.OAuth.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Newtonsoft.Json.dll
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Owin.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.Helpers.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.Mvc.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.Optimization.dll
@@ -86,23 +72,13 @@ C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.We
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.xml
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.Deployment.xml
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.Razor.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Newtonsoft.Json.xml
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Antlr3.Runtime.pdb
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.Core.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.Owin.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Host.SystemWeb.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Facebook.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Cookies.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Google.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.Twitter.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Release\Taylor Mvc.csprojAssemblyReference.cache
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Release\Taylor Mvc.csproj.CoreCompileInputs.cache
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Release\Taylor Mvc.csproj.CopyComplete
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Release\Taylor Mvc.dll
 C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Release\Taylor Mvc.pdb
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Dapper.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\System.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor Mvc\bin\Dapper.xml

@@ -28,7 +28,7 @@ namespace Taylor_Mvc.Models
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Please provide a password")]
-        [StringLength(100, MinimumLength = 10, ErrorMessage = "Your password must be between 10 and 100 characters")]
+        [StringLength(100, MinimumLength = 8, ErrorMessage = "Your password must be between 10 and 100 characters")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]

@@ -1,7 +1,23 @@
-﻿
-
+﻿@if (Session["emailAddress"] == null)
+{
     <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
         <li class="nav-item alert-dark navbar-right"><a href="/Home/RegisterStaff" id="registerLink" class="nav-link">Looking for a job?</a></li>
+        <li class="nav-item alert-dark navbar-right"><a href="/Home/RegisterClient" id="registerLink" class="nav-link">Looking to hire?</a></li>
         <li class="nav-item alert-dark navbar-right"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
     </ul>
 
+}
+else
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
+            <li class="nav-item alert-dark navbar-right">
+                @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link"})
+            </li>
+            <li class="nav-item alert-dark navbar-right"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
+        </ul>
+    }
+}
