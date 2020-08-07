@@ -302,7 +302,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\RegisterClient.cshtml" />
-    <Content Include="Views\Contracts\ViewStaffingRequests.cshtml" />
+    <Content Include="Views\Contracts\StaffingRequests.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

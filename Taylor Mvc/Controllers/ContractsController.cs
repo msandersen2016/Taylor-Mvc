@@ -17,7 +17,7 @@ namespace Taylor_Mvc.Controllers
             return View();
         }
         // GET: Contracts
-        public ActionResult ViewStaffingRequests()
+        public ActionResult StaffingRequests()
         {
             var data = StaffProcessor.LoadStaff();
 
