@@ -32,6 +32,12 @@ namespace Taylor_Mvc.BusinessLogic
 
         }
 
+        public static List<StaffModel> LoadStaff()
+        {
+            string sql = "Exec spGetAllStaff";
+
+            return SQLDataAccess.LoadData<StaffModel>(sql);
+        }
 
     }
 }
