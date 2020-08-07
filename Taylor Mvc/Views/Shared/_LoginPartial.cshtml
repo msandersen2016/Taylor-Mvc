@@ -17,7 +17,9 @@ else
             <li class="nav-item alert-dark navbar-right">
                 @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link"})
             </li>
-            <li class="nav-item alert-dark navbar-right"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
+            <div>
+
+            </div>
         </ul>
     }
 }
