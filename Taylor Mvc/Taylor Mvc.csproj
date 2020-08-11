@@ -303,11 +303,11 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\RegisterClient.cshtml" />
     <Content Include="Views\Contracts\StaffingRequests.cshtml" />
+    <Content Include="Views\Contracts\createNewSR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Login\" />
-    <Folder Include="Views\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
