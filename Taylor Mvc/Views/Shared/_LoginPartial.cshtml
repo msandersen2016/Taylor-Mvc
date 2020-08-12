@@ -14,18 +14,19 @@ else
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
-            <li class="nav-item alert-dark navbar-right">
+            @*<li class="nav-item alert-dark navbar-right">
                 @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link"})
-            </li>
+                @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Home", @class = "nav-link"})
+            </li>*@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    menu
+                    @String.Format("Hello {0}!",Session["emailAddress"])
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Dropdown">
-                    <a class="dropdown-item" href="/Contracts/Contracts">contracts</a>
-                    <a class="dropdown-item" href="#">my account</a>
+                    @Html.ActionLink("Contracts", "Contracts", "Contracts", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    @Html.ActionLink("My Account", "MyAccount", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" asp-controller="AccountController" asp-action="LogOff"> Log Off</a>
+                    @Html.ActionLink("Log Off", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
                 </div>
             </li>
         </ul>

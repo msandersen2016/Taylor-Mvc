@@ -303,6 +303,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\RegisterClient.cshtml" />
     <Content Include="Views\Contracts\StaffingRequests.cshtml" />
+    <Content Include="Views\Account\MyAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

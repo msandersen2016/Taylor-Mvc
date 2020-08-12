@@ -14,7 +14,11 @@ namespace Taylor_Mvc.Controllers
         {
             return View();
         }
-        
+        public ActionResult MyAccount()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(string emailAddress, string password)
@@ -41,8 +45,14 @@ namespace Taylor_Mvc.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult LogOff()
+        //{
+        //    Session["emailAddress"] = null;
+        //    return RedirectToAction("Index", "Home");
+        //}
+
         public ActionResult LogOff()
         {
             Session["emailAddress"] = null;
