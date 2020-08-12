@@ -39,7 +39,7 @@ namespace Taylor_Mvc.Controllers
             return View(staff);
         }
 
-        public ActionResult createNewSR()
+        public ActionResult CreateNewSR()
         {
             return View();
         }

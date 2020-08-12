@@ -25,7 +25,7 @@ else
                     <a class="dropdown-item" href="/Contracts/Contracts">contracts</a>
                     <a class="dropdown-item" href="#">my account</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" asp-controller="AccountController" asp-action="LogOff"> Log Off</a>
+                    @Html.ActionLink("log off","LogOff","Account")
                 </div>
             </li>
         </ul>
