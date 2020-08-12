@@ -14,10 +14,6 @@ else
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
-            @*<li class="nav-item alert-dark navbar-right">
-                @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link"})
-                @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Home", routeValues: null, htmlAttributes: new { title = "Home", @class = "nav-link"})
-            </li>*@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     @String.Format("Hello {0}!",Session["emailAddress"])
