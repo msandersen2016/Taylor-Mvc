@@ -16,27 +16,42 @@ namespace Taylor_Mvc.Controllers
         {
             return View();
         }
-        // GET: Contracts
-        public ActionResult StaffingRequests()
+       
+        public ActionResult SubmitStaffingRequest()
         {
             var data = StaffProcessor.LoadStaff();
-
-            List<StaffModel> staff = new List<StaffModel>();
-
-            foreach (var sm in data)
+            var allStaff = new AllStaffSelectionViewModel();
+            foreach (var staff in data)
             {
-                staff.Add(new StaffModel
+                var staffView = new SelectStaffEditorViewModel()
                 {
-                    EmailAddress = sm.EmailAddress,
-                    ConfirmEmail = sm.EmailAddress,
-                    PhoneNumber = sm.PhoneNumber,
-                    FirstName = sm.FirstName,
-                    LastName = sm.LastName,
-                    Skills = sm.Skills,
-                    Experience = sm.Experience                    
-                });
+                    //Id = 2,
+                    Email = staff.EmailAddress,
+                    Name = string.Format("{0} {1}", staff.FirstName, staff.LastName),
+                    Selected = false,
+                    Skills = staff.Skills,
+                    Experience = staff.Experience
+                };
+                allStaff.Staff.Add(staffView);
             }
-            return View(staff);
+
+            return View(allStaff);
+        }
+        [HttpPost]
+        public ActionResult SubmitStaffingRequest(AllStaffSelectionViewModel model)
+        {
+            // get the ids of the items selected:
+            var selectedIds = model.GetSelectedIds();
+
+            ClientProcessor.CreateStaffingRequest(Session["emailAddress"].ToString());
+
+            foreach (string email in selectedIds)
+            {
+                ClientProcessor.AddStaffToStaffRequest(email);
+            }
+
+            //TODO: process selected staff
+            return RedirectToAction("SubmitStaffingRequest");
         }
     }
 }

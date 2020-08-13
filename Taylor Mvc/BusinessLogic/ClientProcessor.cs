@@ -28,9 +28,31 @@ namespace Taylor_Mvc.BusinessLogic
             string sql = @"EXEC spAddClient @Id, @EmailAddress, @Password, @FirstName, @LastName, @CompanyName, @PhoneNumber";
 
             return SQLDataAccess.SaveData(sql, data);
-
         }
 
 
+        public static int CreateStaffingRequest(string clientEmail)
+        {
+            ClientModel data = new ClientModel
+            {
+                EmailAddress = clientEmail
+            };
+
+            string sql = @"Exec spCreateStaffingRequest @EmailAddress";
+
+            return SQLDataAccess.SaveData(sql, data);
+        }
+
+        public static int AddStaffToStaffRequest(string staffEmail)
+        {
+            StaffModel data = new StaffModel
+            {
+                EmailAddress = staffEmail
+            };
+
+            string sql = @"Exec spAddStaffToStaffingRequest @EmailAddress";
+
+            return SQLDataAccess.SaveData(sql, data);
+        }
     }
 }

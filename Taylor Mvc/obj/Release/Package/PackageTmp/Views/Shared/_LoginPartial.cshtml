@@ -2,6 +2,7 @@
 {
     <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
         <li class="nav-item alert-dark navbar-right"><a href="/Home/RegisterStaff" id="registerLink" class="nav-link">Looking for a job?</a></li>
+        <li class="nav-item alert-dark navbar-right"><a href="/Home/RegisterClient" id="registerLink" class="nav-link">Looking to hire?</a></li>
         <li class="nav-item alert-dark navbar-right"><a href="/Account/Login" id="loginLink" class="nav-link">Log in</a></li>
     </ul>
 
@@ -13,10 +14,17 @@ else
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
-            <li class="nav-item alert-dark navbar-right">
-                @Html.ActionLink("Hello " + Session["emailAddress"] + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", @class = "nav-link"})
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="Dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @String.Format("Hello {0}!",Session["emailAddress"])
+                </a>
+                <div class="dropdown-menu" aria-labelledby="Dropdown">
+                    @Html.ActionLink("Contracts", "Contracts", "Contracts", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    @Html.ActionLink("My Account", "MyAccount", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                    <div class="dropdown-divider"></div>
+                    @Html.ActionLink("Log Off", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                </div>
             </li>
-            <li class="nav-item alert-dark navbar-right"><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log off</a></li>
         </ul>
     }
 }

@@ -1,0 +1,24 @@
+﻿@model Taylor_Mvc.Models.SelectStaffEditorViewModel
+    <tr>
+        <td>
+            @Html.CheckBoxFor(model => model.Selected)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Skills)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Experience)
+            @*@Html.HiddenFor(model => model.Id)*@
+            @Html.HiddenFor(model => model.Name)
+            @Html.HiddenFor(model => model.Email)
+        </td>
+
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+        </td>*@
+    </tr>

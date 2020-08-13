@@ -141,7 +141,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AllStaffSelectionViewModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\SelectStaffEditorViewModel.cs" />
     <Compile Include="Models\StaffModel.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -302,8 +304,9 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\RegisterClient.cshtml" />
-    <Content Include="Views\Contracts\StaffingRequests.cshtml" />
+    <Content Include="Views\Contracts\SubmitStaffingRequest.cshtml" />
     <Content Include="Views\Account\MyAccount.cshtml" />
+    <Content Include="Views\Contracts\EditorTemplates\SelectStaffEditorViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
