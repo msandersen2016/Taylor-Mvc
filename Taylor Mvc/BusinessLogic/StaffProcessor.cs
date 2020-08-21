@@ -81,6 +81,13 @@ namespace Taylor_Mvc.BusinessLogic
             return SQLDataAccess.LoadData<Salary>(sql);
         }
 
+        public static string GetSalaryById(int salaryId)
+        {
+            string sql = String.Format("Exec spGetSalaryById '{0}'", salaryId);
+            return SQLDataAccess.LoadData<string>(sql).FirstOrDefault();
+
+        }
+
         internal static int SaveStaff(string emailAddress, string firstName, string lastName, string experience, string phoneNumber, byte[] staffPhoto, string education, int salaryId, string location)
         {
             var data = new

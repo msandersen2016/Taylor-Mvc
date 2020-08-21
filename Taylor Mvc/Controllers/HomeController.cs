@@ -144,7 +144,15 @@ namespace Taylor_Mvc.Controllers
 
             else
             {
-                return new FileContentResult(StaffProcessor.LoadPhoto(emailAddress), "image/jpeg");
+                try
+                {
+                    FileContentResult fcr = new FileContentResult(StaffProcessor.LoadPhoto(emailAddress), "image/jpeg");
+                    return fcr;
+                }
+                catch
+                {
+                    return null;
+                }
             }
         }
     }

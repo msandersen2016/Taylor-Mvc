@@ -1,4 +1,5 @@
-﻿@model Taylor_Mvc.Models.SelectStaffEditorViewModel
+﻿@using Taylor_Mvc.BusinessLogic;
+@model Taylor_Mvc.Models.SelectStaffEditorViewModel
     <tr>
         <td>
             @Html.CheckBoxFor(model => model.Selected)
@@ -15,11 +16,15 @@
         <td>
             @Html.DisplayFor(model => model.Education)
         </td>
+        @*<td>
+            @Html.DropDownListFor(model => model.SalaryId,
+           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.Salaries(), "SalaryId", "SalaryRange"), new { @class = "form-control" })
+        </td>*@
         <td>
-            @Html.DisplayFor(model => model.Location)
+            @Html.DisplayTextFor(model => model.SalaryString)
         </td>
         <td>
-            @Html.DisplayFor(model => model.SalaryId)
+            @Html.DisplayFor(model => model.Location)
             @Html.HiddenFor(model => model.Name)
             @Html.HiddenFor(model => model.Email)
         </td>

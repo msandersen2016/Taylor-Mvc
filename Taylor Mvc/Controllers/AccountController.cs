@@ -17,9 +17,15 @@ namespace Taylor_Mvc.Controllers
         }
         public ActionResult MyAccount()
         {
-            StaffModel staff = StaffProcessor.LoadStaff(Session["emailAddress"].ToString());
-
-            return View(staff);
+            if (UserProcessor.IsInRole(Session["emailAddress"].ToString(), "Staff"))
+            {
+                StaffModel staff = StaffProcessor.LoadStaff(Session["emailAddress"].ToString());
+                return View(staff);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         [HttpPost]
