@@ -1,0 +1,38 @@
+﻿@model Taylor_Mvc.Models.AllStaffSelectionViewModel
+
+@{
+    ViewBag.Title = "People";
+}
+
+<h2>New Staffing Request</h2>
+
+@using (Html.BeginForm("SubmitStaffingRequest", "Contracts", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+{
+    <table class="table">
+        <tr>
+            <th>
+                Select
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Skills
+            </th>
+            <th>
+                Experience
+            </th>
+            <th></th>
+        </tr>
+        @Html.EditorFor(model => model.Staff)
+    </table>
+    <hr />
+    <br />
+    <input type="submit" name="operation" id="submit" value="Submit Selected" />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+

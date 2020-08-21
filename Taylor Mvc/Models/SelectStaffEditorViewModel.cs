@@ -12,7 +12,10 @@ namespace Taylor_Mvc.Models
         public string Email { get; set; }
         [Display(Name = "Name")]
         public string Name { get; set; }
-        public string Skills { get; set; }
+        //public string Skills { get; set; }
         public string Experience { get; set; }
+        public string Education { get; set; }
+        public int SalaryId { get; set; }
+        public string Location { get; set; }
     }
 }

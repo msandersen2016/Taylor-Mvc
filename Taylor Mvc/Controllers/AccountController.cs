@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Taylor_Mvc.BusinessLogic;
+using Taylor_Mvc.Models;
 
 namespace Taylor_Mvc.Controllers
 {
@@ -16,7 +17,9 @@ namespace Taylor_Mvc.Controllers
         }
         public ActionResult MyAccount()
         {
-            return View();
+            StaffModel staff = StaffProcessor.LoadStaff(Session["emailAddress"].ToString());
+
+            return View(staff);
         }
 
         [HttpPost]

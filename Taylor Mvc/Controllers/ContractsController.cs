@@ -4,6 +4,8 @@ using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
+using System.Web.UI.WebControls;
 using Taylor_Mvc.BusinessLogic;
 using Taylor_Mvc.Models;
 
@@ -19,7 +21,7 @@ namespace Taylor_Mvc.Controllers
        
         public ActionResult SubmitStaffingRequest()
         {
-            var data = StaffProcessor.LoadStaff();
+            var data = StaffProcessor.LoadAllStaff();
             var allStaff = new AllStaffSelectionViewModel();
             foreach (var staff in data)
             {
@@ -29,8 +31,11 @@ namespace Taylor_Mvc.Controllers
                     Email = staff.EmailAddress,
                     Name = string.Format("{0} {1}", staff.FirstName, staff.LastName),
                     Selected = false,
-                    Skills = staff.Skills,
-                    Experience = staff.Experience
+                    //Skills = staff.Skills,
+                    Experience = staff.Experience,
+                    Education = staff.Education,
+                    SalaryId = staff.SalaryId,
+                    Location = staff.Location
                 };
                 allStaff.Staff.Add(staffView);
             }
@@ -42,14 +47,28 @@ namespace Taylor_Mvc.Controllers
         {
             // get the ids of the items selected:
             var selectedIds = model.GetSelectedIds();
-
-            ClientProcessor.CreateStaffingRequest(Session["emailAddress"].ToString());
-
-            foreach (string email in selectedIds)
+            if (selectedIds.Count() > 0)
             {
-                ClientProcessor.AddStaffToStaffRequest(email);
-            }
+                try
+                {
+                    ClientProcessor.CreateStaffingRequest(Session["emailAddress"].ToString());
 
+                    foreach (string email in selectedIds)
+                    {
+                        ClientProcessor.AddStaffToStaffRequest(email);
+                    }
+
+                    TempData["SubmitStaffSuccess"] = "success";
+                }
+                catch (Exception e)
+                {
+                    TempData["SubmitStaffSuccess"] = "failure";
+                }
+            }
+            else
+            {
+                TempData["SubmitStaffSuccess"] = "noneSelected";
+            }
             //TODO: process selected staff
             return RedirectToAction("SubmitStaffingRequest");
         }

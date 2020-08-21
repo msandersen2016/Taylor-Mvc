@@ -6,20 +6,12 @@
         <td>
             @Html.DisplayFor(model => model.Name)
         </td>
-        @*<td>
+        <td>
             @Html.DisplayFor(model => model.Skills)
-        </td>*@
+        </td>
         <td>
             @Html.DisplayFor(model => model.Experience)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Education)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Location)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.SalaryId)
+            @*@Html.HiddenFor(model => model.Id)*@
             @Html.HiddenFor(model => model.Name)
             @Html.HiddenFor(model => model.Email)
         </td>
