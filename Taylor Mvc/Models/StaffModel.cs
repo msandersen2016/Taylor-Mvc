@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using System.Web;
-using System.Web.ModelBinding;
 
 namespace Taylor_Mvc.Models
 {
@@ -33,13 +32,12 @@ namespace Taylor_Mvc.Models
         [Required(ErrorMessage = "Please provide your location")]
         public string Location { get; set; }
 
-        [BindNever]
+
+        [Required(ErrorMessage = "Please provide your education")]
+        public int EducationID { get; set; }
+
         [Display(Name = "Photo")]
         public byte[] StaffPhoto { get; set; }
-
-        [BindNever]
-        [Display(Name = "Resume")]
-        public byte[] StaffResume { get; set; }
 
         public Guid Id { get; set; }
 
@@ -49,5 +47,11 @@ namespace Taylor_Mvc.Models
     {
         public int SalaryId { get; set; }
         public string SalaryRange { get; set; }
+    }
+    public class Education
+    {
+        public int EducationID { get; set; }
+        public string EducationLevel { get; set; }
+
     }
 }
