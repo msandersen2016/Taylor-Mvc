@@ -13,7 +13,7 @@ namespace Taylor_Mvc.BusinessLogic
             string firstName, string lastName, 
             //string skills, 
             string experience, string phoneNumber, byte[] staffPhoto, 
-            string education, int salaryId, string location)
+            int EducationID, int salaryId, string location)
         {
             var id = Guid.NewGuid();
             var data = new 
@@ -27,13 +27,13 @@ namespace Taylor_Mvc.BusinessLogic
                 Experience = experience,
                 PhoneNumber = phoneNumber,
                 StaffPhoto = staffPhoto,
-                Education = education,
+                Education = EducationID,
                 Salary = salaryId,
                 Location = location
             };
 
             //string staffSql = @"EXEC spAddStaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Skills, @Experience, @PhoneNumber";
-            string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @EducationID, @Salary, @Location";
+            string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
             int i =  SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";
@@ -116,7 +116,7 @@ namespace Taylor_Mvc.BusinessLogic
                 Location = location
             };
 
-            string staffSql = @"EXEC spUpdateStaff @EmailAddress, @FirstName, @LastName, @Experience, @PhoneNumber, @EducationID, @Salary, @Location";
+            string staffSql = @"EXEC spUpdateStaff @EmailAddress, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
             int i = SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";

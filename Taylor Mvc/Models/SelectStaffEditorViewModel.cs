@@ -15,7 +15,8 @@ namespace Taylor_Mvc.Models
         public string Name { get; set; }
         //public string Skills { get; set; }
         public string Experience { get; set; }
-        public string Education { get; set; }
+        public int EducationID { get; set; }
+        public string EducationString { get { return StaffProcessor.GetEducationLevel(EducationID); } }
         public int SalaryId { get; set; }
         public string SalaryString { get { return StaffProcessor.GetSalaryById(SalaryId); } }
         public string Location { get; set; }

@@ -24,13 +24,17 @@ namespace Taylor_Mvc.Models
         public string Experience { get; set; }
 
         [Required(ErrorMessage = "Please provide your education")]
-        public int EducationID { get; set; }
+        public string Education { get; set; }
 
         [Required(ErrorMessage = "Please provide your salary")]
         public int SalaryId { get; set; }
 
         [Required(ErrorMessage = "Please provide your location")]
         public string Location { get; set; }
+
+
+        [Required(ErrorMessage = "Please provide your education")]
+        public int EducationID { get; set; }
 
         [Display(Name = "Photo")]
         public byte[] StaffPhoto { get; set; }
