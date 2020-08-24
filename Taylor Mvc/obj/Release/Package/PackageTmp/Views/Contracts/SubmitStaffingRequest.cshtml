@@ -5,7 +5,18 @@
 }
 
 <h2>New Staffing Request</h2>
-
+@if (TempData["SubmitStaffSuccess"]?.ToString() == "success")
+{
+    <div class="alert alert-success">Request Submitted</div>
+}
+@if (TempData["SubmitStaffSuccess"]?.ToString() == "failure")
+{
+    <div class="alert alert-danger">Something Went Wrong :(</div>
+}
+@if (TempData["SubmitStaffSuccess"]?.ToString() == "noneSelected")
+{
+    <div class="alert alert-info">You must select at least one staff</div>
+}
 @using (Html.BeginForm("SubmitStaffingRequest", "Contracts", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
 {
     <table class="table">
@@ -16,11 +27,20 @@
             <th>
                 Name
             </th>
-            <th>
-                Skills
-            </th>
+            @*<th>
+            Skills
+        </th>*@
             <th>
                 Experience
+            </th>
+            <th>
+                Education
+            </th>
+            <th>
+                Salary
+            </th>
+            <th>
+                Location
             </th>
             <th></th>
         </tr>
@@ -33,6 +53,11 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".alert").delay(3000).fadeOut(300);
+        })
+    </script>
 
 }
 

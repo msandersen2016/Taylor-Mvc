@@ -11,8 +11,8 @@ namespace Taylor_Mvc.BusinessLogic
     {
         public static int CreateStaff(string emailAddress, string password, 
             string firstName, string lastName, 
-            //string skills, 
             string experience, string phoneNumber, byte[] staffPhoto, 
+            byte[] staffResume, string staffResumeFileName, 
             string education, int salaryId, string location)
         {
             var id = Guid.NewGuid();
@@ -23,23 +23,29 @@ namespace Taylor_Mvc.BusinessLogic
                 Password = password,
                 FirstName = firstName,
                 LastName = lastName,
-                //Skills = skills,
                 Experience = experience,
                 PhoneNumber = phoneNumber,
                 StaffPhoto = staffPhoto,
+                StaffResume = staffResume,
+                ResumeFileName = staffResumeFileName,
                 Education = education,
                 Salary = salaryId,
                 Location = location
             };
 
-            //string staffSql = @"EXEC spAddStaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Skills, @Experience, @PhoneNumber";
-            string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
+            string staffSql = @"EXEC spAddStaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
             int i =  SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";
             if (staffPhoto != null)
             {
                 int i2 = SQLDataAccess.SaveData(photoSql, data);
+            }
+
+            string resumeSql = @"EXEC spUploadStaffResume @EmailAddress, @ResumeFileName, @StaffResume";
+            if (staffPhoto != null)
+            {
+                int i3 = SQLDataAccess.SaveData(resumeSql, data);
             }
 
             return 1;
@@ -88,7 +94,9 @@ namespace Taylor_Mvc.BusinessLogic
 
         }
 
-        internal static int SaveStaff(string emailAddress, string firstName, string lastName, string experience, string phoneNumber, byte[] staffPhoto, string education, int salaryId, string location)
+        internal static int SaveStaff(string emailAddress, string firstName, string lastName,
+            string experience, string phoneNumber, byte[] staffPhoto, byte[] staffResume,
+            string resumeFileName, string education, int salaryId, string location)
         {
             var data = new
             {
@@ -98,6 +106,8 @@ namespace Taylor_Mvc.BusinessLogic
                 Experience = experience,
                 PhoneNumber = phoneNumber,
                 StaffPhoto = staffPhoto,
+                StaffResume = staffResume,
+                ResumeFileName = resumeFileName,
                 Education = education,
                 Salary = salaryId,
                 Location = location
@@ -110,6 +120,12 @@ namespace Taylor_Mvc.BusinessLogic
             if (staffPhoto != null)
             {
                 int i2 = SQLDataAccess.SaveData(photoSql, data);
+            }
+
+            string resumeSql = @"EXEC spUploadStaffResume @EmailAddress, @ResumeFileName, @StaffResume";
+            if (staffResume != null)
+            {
+                int i3 = SQLDataAccess.SaveData(resumeSql, data);
             }
 
             return 1;
