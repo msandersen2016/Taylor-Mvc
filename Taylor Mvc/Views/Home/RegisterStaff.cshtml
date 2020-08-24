@@ -99,8 +99,8 @@
         @Html.LabelFor(model => model.EducationID, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.EducationID,
-           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.Salaries(), "SalaryId", "SalaryRange"), new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.SalaryId, "", new { @class = "text-danger" })
+           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.EducationLevels(), "EducationId", "EducationLevel"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.EducationID, "", new { @class = "text-danger" })
         </div>
     </div>
 

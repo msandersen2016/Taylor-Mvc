@@ -42,13 +42,15 @@ namespace Taylor_Mvc.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult RegisterStaff([Bind(Exclude = "StaffPhoto")]StaffModel model)
+        public ActionResult RegisterStaff([Bind(Exclude = "StaffPhoto,StaffResume")]StaffModel model)
         {
+            string staffResumeFileName = null;
             if (ModelState.IsValid)
             {
-                byte[] imageData = null;
+                byte[] photoImageData = null;
+                byte[] resumeImageData = null;
 
-                if(Request.Files.Count > 0)
+                if (Request.Files.Count > 0)
                 {
                     if (Request.Files["StaffPhoto"] != null)
                     {
@@ -56,15 +58,24 @@ namespace Taylor_Mvc.Controllers
 
                         using (var binary = new BinaryReader(poImgFile.InputStream))
                         {
-                            imageData = binary.ReadBytes(poImgFile.ContentLength);
+                            photoImageData = binary.ReadBytes(poImgFile.ContentLength);
+                        }
+                    }
+                    if (Request.Files["StaffResume"] != null)
+                    {
+                        HttpPostedFileBase poResFile = Request.Files["StaffResume"];
+                        staffResumeFileName = Request.Files["StaffResume"].FileName;
+
+                        using (var binary = new BinaryReader(poResFile.InputStream))
+                        {
+                            resumeImageData = binary.ReadBytes(poResFile.ContentLength);
                         }
                     }
                 }
 
                 int recordsCreated = StaffProcessor.CreateStaff(model.EmailAddress,
-                    model.Password, model.FirstName, model.LastName, 
-                    //model.Skills,
-                    model.Experience, model.PhoneNumber, imageData, 
+                    model.Password, model.FirstName, model.LastName, model.Experience, 
+                    model.PhoneNumber, photoImageData, resumeImageData,staffResumeFileName, 
                     model.EducationID, model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
@@ -77,32 +88,45 @@ namespace Taylor_Mvc.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult SaveStaff([Bind(Exclude = "StaffPhoto")] StaffModel model)
+        public ActionResult SaveStaff([Bind(Exclude = "StaffPhoto,StaffResume")] StaffModel model)
         {
             //if (ModelState.IsValid)
             //{
-                byte[] imageData = null;
+            byte[] photoImageData = null;
+            byte[] resumeImageData = null;
+            string staffResumeFileName = null;
 
-                if (Request.Files.Count > 0)
+            if (Request.Files.Count > 0)
+            {
+                if (Request.Files["StaffPhoto"] != null)
                 {
-                    if (Request.Files["StaffPhoto"] != null)
+                    HttpPostedFileBase poImgFile = Request.Files["StaffPhoto"];
+                    if (poImgFile.ContentLength > 0)
                     {
-                        HttpPostedFileBase poImgFile = Request.Files["StaffPhoto"];
-                        if (poImgFile.ContentLength > 0)
-                        { 
-                            using (var binary = new BinaryReader(poImgFile.InputStream))
-                            {
-                                imageData = binary.ReadBytes(poImgFile.ContentLength);
-                            }
+                        using (var binary = new BinaryReader(poImgFile.InputStream))
+                        {
+                            photoImageData = binary.ReadBytes(poImgFile.ContentLength);
                         }
                     }
                 }
+                if (Request.Files["StaffResume"] != null)
+                {
+                    HttpPostedFileBase poResFile = Request.Files["StaffResume"];
+                    if (poResFile.ContentLength > 0)
+                    {
+                        using (var binary = new BinaryReader(poResFile.InputStream))
+                        {
+                            resumeImageData = binary.ReadBytes(poResFile.ContentLength);
+                        }
+                        staffResumeFileName = Request.Files["StaffResume"].FileName;
+                    }
+                }
+            }
 
                 int recordsCreated = StaffProcessor.SaveStaff(model.EmailAddress,
-                    model.FirstName, model.LastName,
-                    //model.Skills,
-                    model.Experience, model.PhoneNumber, imageData,
-                    model.EducationID, model.SalaryId, model.Location);
+                    model.FirstName, model.LastName, model.Experience, model.PhoneNumber,
+                    photoImageData, resumeImageData, staffResumeFileName, model.EducationID,
+                    model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
                 return RedirectToAction("MyAccount","Account");

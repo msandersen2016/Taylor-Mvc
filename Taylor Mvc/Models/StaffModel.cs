@@ -23,21 +23,22 @@ namespace Taylor_Mvc.Models
         [Required(ErrorMessage = "Please provide your experience")]
         public string Experience { get; set; }
 
-        [Required(ErrorMessage = "Please provide your education")]
-        public string Education { get; set; }
-
-        [Required(ErrorMessage = "Please provide your salary")]
+        [Display(Name ="Salary Range")]
+        [Required(ErrorMessage = "Please provide your salary range")]
         public int SalaryId { get; set; }
 
         [Required(ErrorMessage = "Please provide your location")]
         public string Location { get; set; }
 
-
-        [Required(ErrorMessage = "Please provide your education")]
+        [Display(Name ="Education Level")]
+        [Required(ErrorMessage = "Please provide your level of education")]
         public int EducationID { get; set; }
 
         [Display(Name = "Photo")]
         public byte[] StaffPhoto { get; set; }
+
+        [Display(Name = "Resume")]
+        public byte[] StaffResume { get; set; }
 
         public Guid Id { get; set; }
 
