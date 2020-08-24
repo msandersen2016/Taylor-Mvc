@@ -65,7 +65,7 @@ namespace Taylor_Mvc.Controllers
                     model.Password, model.FirstName, model.LastName, 
                     //model.Skills,
                     model.Experience, model.PhoneNumber, imageData, 
-                    model.Education, model.SalaryId, model.Location);
+                    model.EducationID, model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
                 return RedirectToAction("Index");
@@ -102,7 +102,7 @@ namespace Taylor_Mvc.Controllers
                     model.FirstName, model.LastName,
                     //model.Skills,
                     model.Experience, model.PhoneNumber, imageData,
-                    model.Education, model.SalaryId, model.Location);
+                    model.EducationID, model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
                 return RedirectToAction("MyAccount","Account");

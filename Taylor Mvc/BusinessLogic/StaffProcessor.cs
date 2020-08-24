@@ -33,7 +33,7 @@ namespace Taylor_Mvc.BusinessLogic
             };
 
             //string staffSql = @"EXEC spAddStaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Skills, @Experience, @PhoneNumber";
-            string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
+            string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @EducationID, @Salary, @Location";
             int i =  SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";
@@ -67,28 +67,41 @@ namespace Taylor_Mvc.BusinessLogic
 
         //public static IEnumerable<string> Salaries = new List<string>
         //{
-            //"$30,000 - $40,000",
-            //"$40,001 - $50,000",
-            //"$50,001 - $60,000",
-            //"$60,001 - $70,000",
-            //"$70,001 - $80,000",
-            //"$80,001+"
+        //"$30,000 - $40,000",
+        //"$40,001 - $50,000",
+        //"$50,001 - $60,000",
+        //"$60,001 - $70,000",
+        //"$70,001 - $80,000",
+        //"$80,001+"
         //};
-
+        // pull staff education id from DB
         public static IEnumerable<Salary> Salaries()
         {
             string sql = "Exec spGetSalaries";
             return SQLDataAccess.LoadData<Salary>(sql);
         }
-
-        public static string GetSalaryById(int salaryId)
+          public static string GetSalaryById(int salaryId)
         {
             string sql = String.Format("Exec spGetSalaryById '{0}'", salaryId);
             return SQLDataAccess.LoadData<string>(sql).FirstOrDefault();
 
         }
 
-        internal static int SaveStaff(string emailAddress, string firstName, string lastName, string experience, string phoneNumber, byte[] staffPhoto, string education, int salaryId, string location)
+        // pull staff request from 
+        public static IEnumerable<Education> EducationLevels()
+        {
+            string sql = "Exec spGetEducation";
+            return SQLDataAccess.LoadData<Education>(sql);
+        }
+   
+        public static string GetEducationLevel(int EducationID)
+        {
+            string sql = String.Format("Exec spGetEducationById '{0}'", EducationID);
+            return SQLDataAccess.LoadData<string>(sql).FirstOrDefault();
+
+        }
+
+        internal static int SaveStaff(string emailAddress, string firstName, string lastName, string experience, string phoneNumber, byte[] staffPhoto, int education, int salaryId, string location)
         {
             var data = new
             {
@@ -103,7 +116,7 @@ namespace Taylor_Mvc.BusinessLogic
                 Location = location
             };
 
-            string staffSql = @"EXEC spUpdateStaff @EmailAddress, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
+            string staffSql = @"EXEC spUpdateStaff @EmailAddress, @FirstName, @LastName, @Experience, @PhoneNumber, @EducationID, @Salary, @Location";
             int i = SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";

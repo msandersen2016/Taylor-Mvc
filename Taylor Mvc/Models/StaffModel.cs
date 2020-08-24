@@ -24,7 +24,7 @@ namespace Taylor_Mvc.Models
         public string Experience { get; set; }
 
         [Required(ErrorMessage = "Please provide your education")]
-        public string Education { get; set; }
+        public int EducationID { get; set; }
 
         [Required(ErrorMessage = "Please provide your salary")]
         public int SalaryId { get; set; }
@@ -43,5 +43,11 @@ namespace Taylor_Mvc.Models
     {
         public int SalaryId { get; set; }
         public string SalaryRange { get; set; }
+    }
+    public class Education
+    {
+        public int EducationID { get; set; }
+        public string EducationLevel { get; set; }
+
     }
 }

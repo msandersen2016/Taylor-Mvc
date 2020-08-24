@@ -88,28 +88,36 @@
         </div>
     </div>
 
+    @* <div class="form-group">
+            @Html.LabelFor(model => model.Education, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
     <div class="form-group">
-        @Html.LabelFor(model => model.Education, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.EducationID, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.EditorFor(model => model.Education, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Education, "", new { @class = "text-danger" })
+            @Html.DropDownListFor(model => model.EducationID,
+           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.Salaries(), "SalaryId", "SalaryRange"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SalaryId, "", new { @class = "text-danger" })
         </div>
     </div>
 
     @*<div class="form-group">
-        @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
-        </div>
-    </div>*@
+            @Html.LabelFor(model => model.Salary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Salary, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+            </div>
+        </div>*@
 
     <div class="form-group">
         @Html.LabelFor(model => model.SalaryId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.SalaryId,
-           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.Salaries(),"SalaryId","SalaryRange"), new { @class = "form-control" })
-           @Html.ValidationMessageFor(model => model.SalaryId, "", new { @class = "text-danger" })
+           new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.Salaries(), "SalaryId", "SalaryRange"), new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SalaryId, "", new { @class = "text-danger" })
         </div>
     </div>
 
