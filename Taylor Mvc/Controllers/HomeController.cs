@@ -76,7 +76,7 @@ namespace Taylor_Mvc.Controllers
                 int recordsCreated = StaffProcessor.CreateStaff(model.EmailAddress,
                     model.Password, model.FirstName, model.LastName, model.Experience, 
                     model.PhoneNumber, photoImageData, resumeImageData,staffResumeFileName, 
-                    model.EducationID, model.SalaryId, model.Location);
+                    model.EducationId, model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
                 return RedirectToAction("Index");
@@ -125,7 +125,7 @@ namespace Taylor_Mvc.Controllers
 
                 int recordsCreated = StaffProcessor.SaveStaff(model.EmailAddress,
                     model.FirstName, model.LastName, model.Experience, model.PhoneNumber,
-                    photoImageData, resumeImageData, staffResumeFileName, model.EducationID,
+                    photoImageData, resumeImageData, staffResumeFileName, model.EducationId,
                     model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;

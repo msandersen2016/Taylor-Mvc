@@ -33,7 +33,7 @@ namespace Taylor_Mvc.Controllers
                     Selected = false,
                     //Skills = staff.Skills,
                     Experience = staff.Experience,
-                    EducationID = staff.EducationID,
+                    EducationID = staff.EducationId,
                     SalaryId = staff.SalaryId,
                     Location = staff.Location
                 };

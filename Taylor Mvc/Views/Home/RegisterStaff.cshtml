@@ -96,11 +96,11 @@
             </div>
         </div>*@
     <div class="form-group">
-        @Html.LabelFor(model => model.EducationID, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.EducationId, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownListFor(model => model.EducationID,
+            @Html.DropDownListFor(model => model.EducationId,
            new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.EducationLevels(), "EducationId", "EducationLevel"), new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.EducationID, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.EducationId, "", new { @class = "text-danger" })
         </div>
     </div>
 

@@ -32,7 +32,7 @@ namespace Taylor_Mvc.Models
 
         [Display(Name ="Education Level")]
         [Required(ErrorMessage = "Please provide your level of education")]
-        public int EducationID { get; set; }
+        public int EducationId { get; set; }
 
         [Display(Name = "Photo")]
         public byte[] StaffPhoto { get; set; }
@@ -51,7 +51,7 @@ namespace Taylor_Mvc.Models
     }
     public class Education
     {
-        public int EducationID { get; set; }
+        public int EducationId { get; set; }
         public string EducationLevel { get; set; }
 
     }
