@@ -142,6 +142,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AllStaffSelectionViewModel.cs" />
+    <Compile Include="Models\ButtonFor.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Models\SelectStaffEditorViewModel.cs" />
     <Compile Include="Models\StaffModel.cs" />
