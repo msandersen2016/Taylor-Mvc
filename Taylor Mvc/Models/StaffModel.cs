@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Dynamic;
 using System.Linq;
 using System.Web;
+using Taylor_Mvc.BusinessLogic;
 
 namespace Taylor_Mvc.Models
 {
@@ -41,6 +42,11 @@ namespace Taylor_Mvc.Models
         public byte[] StaffResume { get; set; }
 
         public Guid Id { get; set; }
+
+        public string SalaryString { get { return StaffProcessor.GetSalaryById(SalaryId); } }
+
+        [Display(Name = "Education")]
+        public string EducationString { get { return StaffProcessor.GetEducationLevel(EducationId); } }
 
     }
 

@@ -1,0 +1,42 @@
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.abstractions.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.runner.json
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor_MVC.Tests.dll.config
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor_MVC.Tests.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor_MVC.Tests.pdb
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Helpers.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Mvc.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Razor.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor Mvc.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.assert.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.core.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.execution.desktop.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Dapper.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\WebGrease.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Antlr3.Runtime.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor Mvc.pdb
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Taylor Mvc.dll.config
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Helpers.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Mvc.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Razor.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.assert.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.core.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\xunit.execution.desktop.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\System.Web.Optimization.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Dapper.xml
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\bin\Debug\Antlr3.Runtime.pdb
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\obj\Debug\Taylor_MVC.Tests.csprojAssemblyReference.cache
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\obj\Debug\Taylor_MVC.Tests.csproj.CoreCompileInputs.cache
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\obj\Debug\Taylor_MVC.Tests.csproj.CopyComplete
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\obj\Debug\Taylor_MVC.Tests.dll
+C:\Users\kmiller\Source\Repos\msandersen2016\Taylor-Mvc\Taylor_MVC.Tests\obj\Debug\Taylor_MVC.Tests.pdb

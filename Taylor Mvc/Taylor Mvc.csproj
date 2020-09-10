@@ -142,6 +142,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AllStaffSelectionViewModel.cs" />
+    <Compile Include="Models\AllUsers.cs" />
     <Compile Include="Models\ButtonFor.cs" />
     <Compile Include="Models\ClientModel.cs" />
     <Compile Include="Models\SelectStaffEditorViewModel.cs" />
@@ -287,7 +288,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Admin\UserManagement.cshtml" />
     <Content Include="Views\Shared\_NavPartial.cshtml" />
     <Content Include="Views\Contracts\Contracts.cshtml" />
     <Content Include="Views\Shared\Staffing.cshtml" />
@@ -309,6 +309,7 @@
     <Content Include="Views\Account\MyAccount_old.cshtml" />
     <Content Include="Views\Contracts\EditorTemplates\SelectStaffEditorViewModel.cshtml" />
     <Content Include="Views\Account\MyAccount.cshtml" />
+    <Content Include="Views\Admin\UserManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

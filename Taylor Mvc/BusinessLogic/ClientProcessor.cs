@@ -54,5 +54,12 @@ namespace Taylor_Mvc.BusinessLogic
 
             return SQLDataAccess.SaveData(sql, data);
         }
+
+        public static List<ClientModel> LoadAllClients()
+        {
+            string sql = "Exec spGetAllClients";
+
+            return SQLDataAccess.LoadData<ClientModel>(sql);
+        }
     }
 }

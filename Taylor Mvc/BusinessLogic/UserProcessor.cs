@@ -37,5 +37,17 @@ namespace Taylor_Mvc.BusinessLogic
             else return false;
         }
 
+        public static int DeleteUser (string UserId)
+        {
+            var data = new
+            {
+                Id = UserId
+            };
+            string sql = @"Exec spDeleteUser @Id";
+
+            return SQLDataAccess.SaveData(sql, data);
+
+        }
+
     }
 }

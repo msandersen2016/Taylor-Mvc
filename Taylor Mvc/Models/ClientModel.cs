@@ -15,7 +15,8 @@ namespace Taylor_Mvc.Models
         [Display(Name = "Last Name")]
         [Required(ErrorMessage = "Please provide your last name")]
         public string LastName { get; set; }
-
+        
+        [Display(Name ="Company Name")]
         [Required(ErrorMessage = "Please provide your company's name")]
         public string CompanyName { get; set; }
 
