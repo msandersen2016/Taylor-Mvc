@@ -44,16 +44,5 @@ namespace Taylor_Mvc.Controllers
             return RedirectToAction("UserManagement","Admin");
         }
 
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(string id)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public ActionResult Details(string id)
-        //{
-        //    return RedirectToAction("Index", "Home");
-        //}
     }
 }

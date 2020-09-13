@@ -13,7 +13,8 @@ namespace Taylor_Mvc.DataAccess
     {
         public static string GetConnectionString(string connectionName = "DefaultConnection")
         {
-            return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
+            //return ConfigurationManager.ConnectionStrings[connectionName].ConnectionString;
+            return "Data Source=tcp:taylorsql2.database.windows.net,1433;Initial Catalog=ProServices2;User Id=Group1@taylorsql2;Password=Pr0gre$$11";
         }
 
         public static List<T> LoadData<T>(string sql)
