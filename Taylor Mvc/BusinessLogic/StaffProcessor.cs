@@ -52,7 +52,7 @@ namespace Taylor_Mvc.BusinessLogic
 
         }
 
-        internal static StaffModel LoadStaff(string email)
+        public static StaffModel LoadStaff(string email)
         {
             string sql = String.Format("Exec spGetStaff '{0}'",email);
             return SQLDataAccess.LoadData<StaffModel>(sql).FirstOrDefault();
@@ -77,7 +77,8 @@ namespace Taylor_Mvc.BusinessLogic
             string sql = "Exec spGetSalaries";
             return SQLDataAccess.LoadData<Salary>(sql);
         }
-          public static string GetSalaryById(int salaryId)
+
+        public static string GetSalaryById(int salaryId)
         {
             string sql = String.Format("Exec spGetSalaryById '{0}'", salaryId);
             return SQLDataAccess.LoadData<string>(sql).FirstOrDefault();

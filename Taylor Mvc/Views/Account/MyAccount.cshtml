@@ -2,14 +2,19 @@
 
 @model Taylor_Mvc.Models.StaffModel
 
-   @{
-        ViewBag.Title = "MyAccount";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
+@{
+    ViewBag.Title = "MyAccount";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["Action"]?.ToString() == "Account Saved")
+{
+    <div class="alert alert-success">Changes Saved</div>
+}
 
 @using (Html.BeginForm("SaveStaff", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
 {
-@Html.AntiForgeryToken()
+    @Html.AntiForgeryToken()
     <div><br /></div>
     <div class="form-horizontal">
         <h4>My Account</h4>
@@ -85,7 +90,7 @@
             @Html.LabelFor(model => model.EducationId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.EducationId,
-               new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.EducationLevels(), "EducationId","EducationLevel"), new { @class = "form-control"})
+               new SelectList(Taylor_Mvc.BusinessLogic.StaffProcessor.EducationLevels(), "EducationId", "EducationLevel"), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.EducationId, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -115,9 +120,14 @@
             </div>
         </div>
     </div>
-    }
-
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".alert").delay(3000).fadeOut(300);
+        })
+    </script>
+
 }

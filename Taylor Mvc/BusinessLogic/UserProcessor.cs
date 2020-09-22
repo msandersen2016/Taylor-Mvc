@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using Taylor_Mvc.DataAccess;
 using Taylor_Mvc.Models;
@@ -47,6 +48,17 @@ namespace Taylor_Mvc.BusinessLogic
 
             return SQLDataAccess.SaveData(sql, data);
 
+        }
+
+        public static bool emailExists (string emailAddress)
+        {
+            string sql = String.Format("Exec spCheckIfEmailExists '{0}'",emailAddress);
+
+            List<string> existingEmails = SQLDataAccess.LoadData<string>(sql);
+            if (existingEmails.Count > 0)
+                return true;
+            else
+                return false;
         }
 
     }

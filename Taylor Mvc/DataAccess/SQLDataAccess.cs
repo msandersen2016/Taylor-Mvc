@@ -33,5 +33,13 @@ namespace Taylor_Mvc.DataAccess
             }
 
         }
+
+        public static void ExecuteData(string sql)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                cnn.Execute(sql);
+            }
+        }
     }
 }

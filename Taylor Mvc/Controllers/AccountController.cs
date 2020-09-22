@@ -34,6 +34,7 @@ namespace Taylor_Mvc.Controllers
         {
             if (UserProcessor.isValidCredentials(emailAddress, password))
             {
+                TempData["Action"] = "Log On";
                 Session["emailAddress"] = emailAddress;
                 if (UserProcessor.IsInRole(emailAddress, "Staff"))
                 {
@@ -51,20 +52,17 @@ namespace Taylor_Mvc.Controllers
                     return RedirectToAction("Index", "Home");
                 }
             }
+            else
+            {
+                TempData["Action"] = "Bad Credentials";
+            }
             return View();
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult LogOff()
-        //{
-        //    Session["emailAddress"] = null;
-        //    return RedirectToAction("Index", "Home");
-        //}
 
         public ActionResult LogOff()
         {
             Session["emailAddress"] = null;
+            TempData["Action"] = "Log Off";
             return RedirectToAction("Index", "Home");
         }
     }

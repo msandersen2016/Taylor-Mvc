@@ -44,6 +44,12 @@ namespace Taylor_Mvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult RegisterStaff([Bind(Exclude = "StaffPhoto,StaffResume")]StaffModel model)
         {
+            if(UserProcessor.emailExists(model.EmailAddress))
+            {
+                TempData["emailExists"] = "true";
+                return View();
+            }
+
             string staffResumeFileName = null;
             if (ModelState.IsValid)
             {
@@ -79,6 +85,7 @@ namespace Taylor_Mvc.Controllers
                     model.EducationId, model.SalaryId, model.Location);
 
                 Session["emailAddress"] = model.EmailAddress;
+                TempData["Action"] = "User Created";
                 return RedirectToAction("Index");
             }
 
@@ -123,16 +130,16 @@ namespace Taylor_Mvc.Controllers
                 }
             }
 
-                int recordsCreated = StaffProcessor.SaveStaff(model.EmailAddress,
-                    model.FirstName, model.LastName, model.Experience, model.PhoneNumber,
-                    photoImageData, resumeImageData, staffResumeFileName, model.EducationId,
-                    model.SalaryId, model.Location);
+            int recordsCreated = StaffProcessor.SaveStaff(model.EmailAddress,
+                model.FirstName, model.LastName, model.Experience, model.PhoneNumber,
+                photoImageData, resumeImageData, staffResumeFileName, model.EducationId,
+                model.SalaryId, model.Location);
 
-                Session["emailAddress"] = model.EmailAddress;
-                return RedirectToAction("MyAccount","Account");
-            //}
+            Session["emailAddress"] = model.EmailAddress;
+            TempData["Action"] = "Account Saved";
 
-            //return View();
+            return RedirectToAction("MyAccount", "Account");
+
         }
 
         public ActionResult RegisterClient()
@@ -145,6 +152,12 @@ namespace Taylor_Mvc.Controllers
         [HttpPost]
         public ActionResult RegisterClient(ClientModel model)
         {
+            if (UserProcessor.emailExists(model.EmailAddress))
+            {
+                TempData["emailExists"] = "true";
+                return View();
+            }
+
             if (ModelState.IsValid)
             {
                 int recordsCreated = ClientProcessor.CreateClient(model.EmailAddress,
@@ -152,6 +165,7 @@ namespace Taylor_Mvc.Controllers
                     model.PhoneNumber);
 
                 Session["emailAddress"] = model.EmailAddress;
+                TempData["Action"] = "User Created";
                 return RedirectToAction("Index");
             }
 
