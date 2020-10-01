@@ -7,7 +7,8 @@
 <h2>New Staffing Request</h2>
 @if (TempData["SubmitStaffSuccess"]?.ToString() == "success")
 {
-    <div class="alert alert-success">Request Submitted</div>
+    <div class="alert alert-success">Request Submitted. You'll receive a response
+     within 24 hours.</div>
 }
 @if (TempData["SubmitStaffSuccess"]?.ToString() == "failure")
 {

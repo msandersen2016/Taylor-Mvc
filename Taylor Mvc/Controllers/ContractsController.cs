@@ -18,7 +18,34 @@ namespace Taylor_Mvc.Controllers
         {
             return View();
         }
-       
+
+        public ActionResult StaffingRequests()
+        {
+            List<StaffingRequestViewModel> allStaffRequests = new List<StaffingRequestViewModel>();
+
+            allStaffRequests = AdminProcessor.LoadAllStaffRequests();
+
+            return View(allStaffRequests);
+        }
+
+        public ActionResult DeleteStaffingRequest(string id)
+        {
+            AdminProcessor.DeleteStaffingRequest(id);
+
+            TempData["StaffingRequestAction"] = "Deleted";
+
+            return RedirectToAction("StaffingRequests", "Contracts");
+        }
+
+        public ActionResult ApproveStaffingRequest(string id)
+        {
+            AdminProcessor.ApproveStaffingRequest(id);
+
+            TempData["StaffingRequestAction"] = "Approved";
+
+            return RedirectToAction("StaffingRequests", "Contracts");
+        }
+
         public ActionResult SubmitStaffingRequest()
         {
             var data = StaffProcessor.LoadAllStaff();
@@ -47,7 +74,7 @@ namespace Taylor_Mvc.Controllers
         {
             // get the ids of the items selected:
             var selectedIds = model.GetSelectedIds();
-            if (selectedIds.Count() > 0)
+            if (selectedIds.Count() > 0 && selectedIds.Count() < 4)
             {
                 try
                 {
@@ -67,7 +94,7 @@ namespace Taylor_Mvc.Controllers
             }
             else
             {
-                TempData["SubmitStaffSuccess"] = "noneSelected";
+                TempData["SubmitStaffSuccess"] = "invalidNumberSelected";
             }
             //TODO: process selected staff
             return RedirectToAction("SubmitStaffingRequest");

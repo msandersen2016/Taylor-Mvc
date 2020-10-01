@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Taylor_Mvc.Models.StaffingRequestViewModel>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@if (TempData["StaffingRequestAction"]?.ToString() == "Deleted")
+{
+    <div class="alert alert-success">Staffing request successfully deleted</div>
+}
+@if (TempData["StaffingRequestAction"]?.ToString() == "Approved")
+{
+    <div class="alert alert-success">Staffing request approved. Contract will start today and will expire in one year.</div>
+}
+
+<h2>Staffing Requests</h2>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            Client
+        </th>
+        <th>
+            First Staff
+        </th>
+        <th>
+            Second Staff
+        </th>
+        <th>
+            Third Staff
+        </th>
+        <th>
+            Approve?
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Client
+            </td>
+            <td>
+                @item.firstStaff
+            </td>
+            <td>
+                @item.secondStaff
+            </td>
+            <td>
+                @item.thirdStaff
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "DeleteStaffingRequest", new { id = item.Id }) |
+                @Html.ActionLink("Approve", "ApproveStaffingRequest", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".alert").delay(3000).fadeOut(300);
+        })
+    </script>
+
+}
