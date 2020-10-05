@@ -65,6 +65,13 @@ namespace Taylor_Mvc.BusinessLogic
             return SQLDataAccess.LoadData<StaffModel>(sql);
         }
 
+        public static List<StaffModel> LoadFreeStaff()
+        {
+            string sql = "Exec spGetFreeStaff";
+
+            return SQLDataAccess.LoadData<StaffModel>(sql);
+        }
+
         public static byte[] LoadPhoto(string emailAddress)
         {
             string sql = String.Format("Exec spGetStaffPhoto '{0}'", emailAddress);

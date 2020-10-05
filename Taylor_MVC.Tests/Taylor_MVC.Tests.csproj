@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests\AdminControllerTests.cs" />
+    <Compile Include="Tests\AdminProcessorTests.cs" />
     <Compile Include="Tests\ClientProcessorTests.cs" />
     <Compile Include="Tests\HomeControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

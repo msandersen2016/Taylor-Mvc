@@ -26,13 +26,30 @@ namespace Taylor_Mvc.BusinessLogic
             SQLDataAccess.SaveData(sql, data);
         }
 
+        public static List<ContractViewModel> LoadContracts()
+        {
+            string sql = "Exec spGetContracts";
+            return SQLDataAccess.LoadData<ContractViewModel>(sql);
+        }
+
         public static void ApproveStaffingRequest(string id)
         {
             var data = new
             {
                 StaffingRequestId = id
             };
-            string sql = @"Exec spApproveStaffingRequest @StaffingRequestId";
+            string sql = @"Exec spApproveStaffingRequestAndDeleteStaff @StaffingRequestId";
+
+            SQLDataAccess.SaveData(sql, data);
+        }
+
+        public static void DeleteContract(string id)
+        {
+            var data = new
+            {
+                ContractId = id
+            };
+            string sql = @"Exec spDeleteContract @ContractId";
 
             SQLDataAccess.SaveData(sql, data);
         }

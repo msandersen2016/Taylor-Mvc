@@ -14,9 +14,9 @@
 {
     <div class="alert alert-danger">Something Went Wrong :(</div>
 }
-@if (TempData["SubmitStaffSuccess"]?.ToString() == "noneSelected")
+@if (TempData["SubmitStaffSuccess"]?.ToString() == "invalidNumberSelected")
 {
-    <div class="alert alert-info">You must select at least one staff</div>
+    <div class="alert alert-warning">You must select between 1 and 3 staff</div>
 }
 @using (Html.BeginForm("SubmitStaffingRequest", "Contracts", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
 {

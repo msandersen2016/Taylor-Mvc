@@ -146,6 +146,7 @@
     <Compile Include="Models\AllUsers.cs" />
     <Compile Include="Models\ButtonFor.cs" />
     <Compile Include="Models\ClientModel.cs" />
+    <Compile Include="Models\ContractViewModel.cs" />
     <Compile Include="Models\SelectStaffEditorViewModel.cs" />
     <Compile Include="Models\StaffingRequestViewModel.cs" />
     <Compile Include="Models\StaffModel.cs" />

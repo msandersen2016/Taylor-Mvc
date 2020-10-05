@@ -16,7 +16,9 @@ namespace Taylor_Mvc.Controllers
         // GET: Contracts
         public ActionResult Contracts()
         {
-            return View();
+            List<ContractViewModel> contracts = AdminProcessor.LoadContracts();
+
+            return View(contracts);
         }
 
         public ActionResult StaffingRequests()
@@ -37,6 +39,15 @@ namespace Taylor_Mvc.Controllers
             return RedirectToAction("StaffingRequests", "Contracts");
         }
 
+        public ActionResult DeleteContract(string id)
+        {
+            AdminProcessor.DeleteContract(id);
+
+            TempData["ContractAction"] = "Deleted";
+
+            return RedirectToAction("Contracts", "Contracts");
+        }
+
         public ActionResult ApproveStaffingRequest(string id)
         {
             AdminProcessor.ApproveStaffingRequest(id);
@@ -48,7 +59,7 @@ namespace Taylor_Mvc.Controllers
 
         public ActionResult SubmitStaffingRequest()
         {
-            var data = StaffProcessor.LoadAllStaff();
+            var data = StaffProcessor.LoadFreeStaff();
             var allStaff = new AllStaffSelectionViewModel();
             foreach (var staff in data)
             {
