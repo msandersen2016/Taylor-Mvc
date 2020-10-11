@@ -1,12 +1,12 @@
 ﻿@using Taylor_Mvc.BusinessLogic;
 @if (UserProcessor.IsInRole(Session["EmailAddress"]?.ToString(), "Admin"))
 {
-    <li class="nav-item bg-dark"><a href="/Admin/UserManagement" class="nav-link">User Management</a></li>
-    <li class="nav-item bg-dark"><a href="/Contracts/StaffingRequests" class="nav-link">Staffing Requests</a></li>
-    <li class="nav-item bg-dark"><a href="/Contracts/Contracts" class="nav-link">Contracts</a></li>
+    <li class="nav-item"><a href="/Admin/UserManagement" class="nav-link js-scroll-trigger">User Management</a></li>
+    <li class="nav-item"><a href="/Contracts/StaffingRequests" class="nav-link js-scroll-trigger">Staffing Requests</a></li>
+    <li class="nav-item"><a href="/Contracts/Contracts" class="nav-link js-scroll-trigger">Contracts</a></li>
 }
 
 @if (UserProcessor.IsInRole(Session["EmailAddress"]?.ToString(), "Client"))
 {
-    <li class="nav-item bg-dark">@Html.ActionLink("New Staffing Request", "SubmitStaffingRequest", "Contracts", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
+    <li class="nav-item">@Html.ActionLink("New Staffing Request", "SubmitStaffingRequest", "Contracts", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
 }

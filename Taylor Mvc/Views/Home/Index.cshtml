@@ -15,42 +15,107 @@
     <div class="alert alert-success">Login successful</div>
 }
 
-<div class="jumbotron">
-    <div class="row">
-        <div class=col-md-6>
-            <h1>Taylor Professional Services</h1>
-            <p class="lead">We're here to serve your staffing needs!</p>
-            <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn More &raquo;</a></p>
-        </div>
-        <div class="col-md-6">
-            <img src="~/Content/images/40001859-happy-smiling-business-team-in-office.jpg" />
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-6">
-        <h2>Looking for a job?</h2>
-        <p>
-            Submit your application here, and you&rsquo;ll be matched with hundreds of potential jobs.  Our
-            expert contract managers will find the right job for you!
-        </p>
-        <p><a class="btn btn-default" href="/Home/About">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-6">
-        <h2>Looking to hire someone?</h2>
-        <p>
-            Sign up today, and you&rsquo;ll receive a 10% discount off our normal fee price.  Hire 4 or more
-            staff from TPS, and we&rsquo;ll give you 20% off!
-        </p>
-        <p><a class="btn btn-default" href="/Home/About">Learn more &raquo;</a></p>
-    </div>
-</div>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".alert").delay(3000).fadeOut(300);
-        })
-    </script>
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Looking To Hire?</h1>
 
-}
+            <a class="btn btn-primary js-scroll-trigger" href="#about">Sign in Here</a>
+        </div>
+    </div>
+</header>
+<!-- About-->
+<section class="about-section text-center" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">About us</h2>
+                <p class="text-white-50">
+                    We are a company looking to suit your needs. This could mean that you are looking for a job or looking for a man to get the job done!
+
+                    . The theme is open source, and you can use it for any purpose, personal or commercial.
+                </p>
+            </div>
+        </div>
+        <img class="img-fluid" src="threebars_.png" alt="">
+    </div>
+</section>
+<header class="masthead2">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Network!</h1>
+            <br>
+            <br>
+
+        </div>
+    </div>
+</header>
+<section class="about-section text-center" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-white mb-4">Looking for a Job?</h2>
+                <p class="text-white-50">
+                    We are a company looking to suit your needs. This could mean that you are looking for a job or looking for a man to get the job done!
+
+                    . The theme is open source, and you can use it for any purpose, personal or commercial.
+                </p>
+            </div>
+        </div>
+        <img class="img-fluid" src="threebars_.png" alt="">
+    </div>
+    <!-- Contact-->
+    <section class="contact-section bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Address</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">All over the world</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-envelope text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Email</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50"><a href="#!">Mattandersen2016@gmail.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="card py-4 h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                            <h4 class="text-uppercase m-0">Phone</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">222-222-2222</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50"><div class="container">© TPS 2020</div></footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $(".alert").delay(3000).fadeOut(300);
+            })
+        </script>
+
+    }

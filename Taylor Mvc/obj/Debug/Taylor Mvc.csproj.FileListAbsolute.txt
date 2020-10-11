@@ -300,7 +300,6 @@ C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.xm
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.Deployment.xml
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\bin\System.Web.WebPages.Razor.xml
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\bin\Antlr3.Runtime.pdb
-C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csprojAssemblyReference.cache
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csproj.CoreCompileInputs.cache
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csproj.CopyComplete
 C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.dll
