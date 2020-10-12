@@ -45,7 +45,7 @@ namespace Taylor_Mvc.BusinessLogic
 
         public static void DeleteContract(string id)
         {
-            var data = new
+            var data = new 
             {
                 ContractId = id
             };

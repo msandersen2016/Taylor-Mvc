@@ -13,7 +13,7 @@ namespace Taylor_Mvc.Controllers
 {
     public class ContractsController : Controller
     {
-        // GET: Contracts
+        
         public ActionResult Contracts()
         {
             List<ContractViewModel> contracts = AdminProcessor.LoadContracts();
