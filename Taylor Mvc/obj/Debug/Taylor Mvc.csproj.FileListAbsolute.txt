@@ -388,3 +388,4 @@ C:\Users\kmiller\source\repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Debug\Tay
 C:\Users\kmiller\source\repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csproj.CopyComplete
 C:\Users\kmiller\source\repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.dll
 C:\Users\kmiller\source\repos\msandersen2016\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.pdb
+C:\Users\matta\Documents\GitHub\Taylor-Mvc\Taylor Mvc\obj\Debug\Taylor Mvc.csprojAssemblyReference.cache
