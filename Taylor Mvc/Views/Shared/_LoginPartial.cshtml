@@ -1,4 +1,5 @@
-﻿@if (Session["emailAddress"] == null)
+﻿@using Taylor_Mvc.BusinessLogic;
+@if (Session["emailAddress"] == null)
 {
     <ul class="nav navbar-nav navbar-dark navbar-right mr-auto">
         <li class="nav-item alert-dark navbar-right"><a href="/Home/RegisterStaff" id="registerLink" class="nav-link">Looking for a job?</a></li>
@@ -19,8 +20,15 @@ else
                     @String.Format("Hello {0}!",Session["emailAddress"])
                 </a>
                 <div class="dropdown-menu" aria-labelledby="Dropdown">
-                    @Html.ActionLink("My Account", "MyAccount", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
-                    <div class="dropdown-divider"></div>
+                    @if (UserProcessor.IsInRole(Session["EmailAddress"]?.ToString(), "Staff"))
+                    {
+                        @Html.ActionLink("My Account", "MyAccount", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        if (StaffProcessor.StaffHasContract(Session["EmailAddress"]?.ToString()))
+                        {
+                            @Html.ActionLink("My Contract", "MyContract","Contracts", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
+                        }
+                        <div class="dropdown-divider"></div>
+                    }
                     @Html.ActionLink("Log Off", "LogOff", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })
                 </div>
             </li>

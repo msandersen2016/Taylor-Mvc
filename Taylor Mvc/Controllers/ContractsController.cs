@@ -21,6 +21,13 @@ namespace Taylor_Mvc.Controllers
             return View(contracts);
         }
 
+        public ActionResult MyContract()
+        {
+            ContractModel cm = StaffProcessor.LoadMyContract(Session["EmailAddress"].ToString());
+
+            return View(cm);
+        }
+
         public ActionResult StaffingRequests()
         {
             List<StaffingRequestViewModel> allStaffRequests = new List<StaffingRequestViewModel>();

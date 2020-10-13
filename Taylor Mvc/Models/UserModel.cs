@@ -36,9 +36,9 @@ namespace Taylor_Mvc.Models
         [Compare("Password", ErrorMessage = "Does not match password.")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Phone Number (optional)")]
         [DataType(DataType.PhoneNumber)]
-        [Required(ErrorMessage = "Please provide your phone number")]
+        //[Required(ErrorMessage = "Please provide your phone number")]
         public string PhoneNumber { get; set; }
 
         //[Required(ErrorMessage = "Please provide your skills")]

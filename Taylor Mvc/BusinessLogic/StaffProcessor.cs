@@ -9,13 +9,13 @@ namespace Taylor_Mvc.BusinessLogic
 {
     public static class StaffProcessor
     {
-        public static int CreateStaff(string emailAddress, string password, 
+        public static int CreateStaff(string emailAddress, string password,
             string firstName, string lastName, string experience, string phoneNumber,
             byte[] staffPhoto, byte[] staffResume, string staffResumeFileName,
             int educationID, int salaryId, string location)
         {
             var id = Guid.NewGuid();
-            var data = new 
+            var data = new
             {
                 Id = id,
                 EmailAddress = emailAddress,
@@ -34,7 +34,7 @@ namespace Taylor_Mvc.BusinessLogic
 
             //string staffSql = @"EXEC spAddStaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Skills, @Experience, @PhoneNumber";
             string staffSql = @"EXEC spAddSTaff @Id, @EmailAddress, @Password, @FirstName, @LastName, @Experience, @PhoneNumber, @Education, @Salary, @Location";
-            int i =  SQLDataAccess.SaveData(staffSql, data);
+            int i = SQLDataAccess.SaveData(staffSql, data);
 
             string photoSql = @"EXEC spUploadStaffPhoto @EmailAddress, @StaffPhoto";
             if (staffPhoto != null)
@@ -54,7 +54,7 @@ namespace Taylor_Mvc.BusinessLogic
 
         public static StaffModel LoadStaff(string email)
         {
-            string sql = String.Format("Exec spGetStaff '{0}'",email);
+            string sql = String.Format("Exec spGetStaff '{0}'", email);
             return SQLDataAccess.LoadData<StaffModel>(sql).FirstOrDefault();
         }
 
@@ -98,7 +98,7 @@ namespace Taylor_Mvc.BusinessLogic
             string sql = "Exec spGetEducation";
             return SQLDataAccess.LoadData<Education>(sql);
         }
-   
+
         public static string GetEducationLevel(int EducationID)
         {
             string sql = String.Format("Exec spGetEducationById '{0}'", EducationID);
@@ -106,8 +106,8 @@ namespace Taylor_Mvc.BusinessLogic
 
         }
 
-        internal static int SaveStaff(string emailAddress, string firstName, 
-            string lastName, string experience, string phoneNumber, byte[] staffPhoto, 
+        internal static int SaveStaff(string emailAddress, string firstName,
+            string lastName, string experience, string phoneNumber, byte[] staffPhoto,
             byte[] staffResume, string staffResumeFileName, int education, int salaryId,
             string location)
         {
@@ -142,6 +142,26 @@ namespace Taylor_Mvc.BusinessLogic
             }
 
             return 1;
+        }
+
+        public static bool StaffHasContract(string emailAddress)
+        {
+            string sql = String.Format("Exec spStaffHasContract '{0}'", emailAddress);
+
+            List<UserModel> users = new List<UserModel>();
+            users = SQLDataAccess.LoadData<UserModel>(sql);
+
+            if (users.Count == 1)
+            {
+                return true;
+            }
+            else return false;
+        }
+
+        public static ContractModel LoadMyContract (string emailAddress)
+        {
+            string sql = String.Format("Exec spGetStaffContract '{0}'", emailAddress);
+            return SQLDataAccess.LoadData<ContractModel>(sql).FirstOrDefault();
         }
     }
 }

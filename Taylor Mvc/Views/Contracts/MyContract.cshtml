@@ -1,0 +1,54 @@
+﻿@model Taylor_Mvc.Models.ContractModel
+
+@{
+    ViewBag.Title = "My Contract";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Contract</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Staff)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Staff)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+    </dl>
+</div>
