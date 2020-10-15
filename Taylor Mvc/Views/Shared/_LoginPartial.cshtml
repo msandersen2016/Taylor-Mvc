@@ -14,11 +14,12 @@ else
         @Html.AntiForgeryToken()
 
 
+
          <li class="nav-item dropdown">
              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  @String.Format("Hello {0}!", Session["emailAddress"])
              </a>
-             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+             <div class="dropdown-menu " aria-labelledby="navbarDropdown">
                  <a class="dropdown-item" href="#"> @Html.ActionLink("My Account", "MyAccount", "Account", routeValues: null, htmlAttributes: new { @class = "dropdown-item" })</a>
 
                  <div class="dropdown-divider"></div>
