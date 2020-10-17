@@ -16,8 +16,13 @@
 {
     @Html.AntiForgeryToken()
     <div><br /></div>
-    <div class="form-horizontal">
-        <h4>My Account</h4>
+    <header class="masthead">
+        <div class="container d-flex h-100 align-items-center">
+            <div class="mx-auto text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Register</h1>
+            </div>
+        </div>
+    </header>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -119,7 +124,7 @@
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
-    </div>
+
 }
 
 @section Scripts {
