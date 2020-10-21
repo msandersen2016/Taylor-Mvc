@@ -9,28 +9,28 @@
 
 </head>
 <body>
-    <div>
-        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-dark">
-            <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                </button>
-                <a class="navbar-brand" href="/">TPS</a>
-                <div class="navbar-collapse collapse" id="navbarSupportedContent">
-                    <ul class="nav navbar-nav navbar-dark mr-auto bg-dark ">
-                        <li class="nav-item bg-dark"><a href="/" class="nav-link">Home</a></li>
-                        <li class="nav-item bg-dark"><a href="/Home/Contact" class="nav-link">Contact</a></li>
-                        @Html.Partial("_NavPartial")
-                    </ul>
-    
-                    <ul class="nav navbar-nav navbar-right mr-10">
-                        @Html.Partial("_LoginPartial")
-                     
-                    </ul> 
-                   
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">
+                Taylor Professional Services  <img src="~/Content/images/threebars_.png">
+            </a>
+            <button class="navbar-toggler navbar-toggler-" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav navbar-dark mr-auto ">
+                    <li class="nav-item "><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item "><a href="/Home/Contact" class="nav-link">Contact</a></li>
+                    @Html.Partial("_NavPartial")
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right mr-10">
+                    @Html.Partial("_LoginPartial")
+
+                </ul>
             </div>
-        </nav>
-    </div>
+    </nav>
 
     <div class="container body-content">
         @RenderBody()

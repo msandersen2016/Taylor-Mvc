@@ -4,11 +4,21 @@
     ViewBag.Title = "People";
 }
 
-<h2>New Staffing Request</h2>
+
+<header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+        <div class="mx-auto text-center">
+            <h1 class="mx-auto my-0 text-uppercase">New Staffing Request</h1>
+        </div>
+    </div>
+</header>
+
 @if (TempData["SubmitStaffSuccess"]?.ToString() == "success")
 {
-    <div class="alert alert-success">Request Submitted. You'll receive a response
-     within 24 hours.</div>
+    <div class="alert alert-success">
+        Request Submitted. You'll receive a response
+        within 24 hours.
+    </div>
 }
 @if (TempData["SubmitStaffSuccess"]?.ToString() == "failure")
 {
@@ -29,8 +39,8 @@
                 Name
             </th>
             @*<th>
-            Skills
-        </th>*@
+                    Skills
+                </th>*@
             <th>
                 Experience
             </th>
